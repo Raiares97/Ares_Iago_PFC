@@ -11,17 +11,13 @@ const dbconfig = {
     multipleStatements: true,
 }
 
-
-
 let conexion;
 
 function conexionMysql() {
     conexion = mysql.createConnection(dbconfig);
     conexion.connect((err) => {
         if (err) {
-            console.log('[db err]', err);
             setTimeout(conexionMysql, 200);
-            console.log(err);
         } else {
             console.log('Conexion a la base de datos establecida');
         }
