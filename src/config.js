@@ -1,6 +1,7 @@
 require('dotenv').config();
 
 module.exports = {
+    secretKey :'Ares_Rodriguez_Iago_PFC_2024',
     app:{
         port: process.env.PORT || 4000,
     },

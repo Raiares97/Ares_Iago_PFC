@@ -36,20 +36,23 @@ function conexionMysql() {
 conexionMysql();
 
 function initialize(tabla) {
-    new Promise((resolve, reject) => {
+    return new Promise((resolve, reject) => {
         conexion.query(`
             DROP TABLE IF EXISTS ${tabla};
             CREATE TABLE ${tabla} (
                 id INT NOT NULL AUTO_INCREMENT,
-                nombre VARCHAR(255) NOT NULL,
-                password VARCHAR(255) NOT NULL,
-                game_tag VARCHAR(255) NOT NULL,
-                main_rol VARCHAR(255) NOT NULL,
-                alt_rol VARCHAR(255) NOT NULL,
+                nombre VARCHAR(255) NOT NULL COLLATE utf8_bin,
+                password VARCHAR(255) NOT NULL COLLATE utf8_bin,
+                game_tag VARCHAR(255) NOT NULL COLLATE utf8_bin,
+                main_rol VARCHAR(255) NOT NULL COLLATE utf8_bin,
+                alt_rol VARCHAR(255) NOT NULL COLLATE utf8_bin,
                 PRIMARY KEY (id)
             )`, (err, resultado) => {
-            fillDB(tabla);
-            return err ? reject(err) : resolve(resultado);
+            if (err) {
+                return reject(err);
+            }
+            fillDB(tabla); // Llamada a la función para llenar la base de datos
+            resolve(resultado);
         });
     });
 }
@@ -126,22 +129,27 @@ function agregar(tabla, data) {
 }
 
 function update(tabla, user, data) {
-    
-    console.log(user.nombre);
+    console.log("--------------------");
+    console.log("Datos nuevos a actualizar:", data);
+    console.log("Datos antiguos del usuario:", user);
+    console.log("--------------------");
+
     return new Promise((resolve, reject) => {
-
-        // Validar que los identificadores contengan los campos necesarios
-        if (!user.nombre || !user.password) {
-            return reject('Se requieren los campos "nombre" y "password" para identificar el registro');
+        // Validar que el usuario esté autenticado
+        if (!user) {
+            return reject('No has iniciado sesión correctamente');
         }
 
-        // Verificar que se hayan proporcionado campos a modificar
-        if (Object.keys(data).length === 0) {
-            return reject('No se han proporcionado datos para actualizar');
+        // Verificar que existan campos nuevos para actualizar
+        const sanitizedData = sanitizeRequestBody(data);
+        if (Object.keys(sanitizedData).length === 0) {
+            return reject('No se han proporcionado datos válidos para actualizar');
         }
 
-        // Ejecutar la búsqueda
-        conexion.query(`SELECT * FROM ${tabla} WHERE nombre = '${user.nombre}' AND password = '${user.password}'`, (err, resultados) => {
+        // Verificar que el usuario exista en la base de datos
+        console.log(user.name);
+        const selectQuery = `SELECT * FROM ${tabla} WHERE nombre = ?`;
+        conexion.query(selectQuery, [user.name], (err, resultados) => {
             if (err) {
                 return reject(err);
             }
@@ -151,10 +159,19 @@ function update(tabla, user, data) {
                 return reject('No se encontró un registro con los identificadores proporcionados');
             }
 
-            // Si el registro existe, proceder a actualizarlo
-            const queryActualizar = `UPDATE ${tabla} SET ? WHERE nombre = ? AND password = ?`;
-            console.log(sanitizeRequestBody(data).length);
-            conexion.query(queryActualizar, [sanitizeRequestBody(data), user.nombre, user.password], (err, resultado) => {
+            // Obtener los datos completos: mezclar datos antiguos (user) con los nuevos (data)
+            const usuarioExistente = resultados[0];
+            const datosCompletos = { 
+                ...usuarioExistente,  // Datos actuales de la base de datos
+                ...sanitizedData      // Datos nuevos a actualizar (sobrescriben si existen)
+            };
+
+            // Eliminar campos no permitidos o redundantes
+            const datosFinales = sanitizeRequestBody(datosCompletos);
+
+            // Construir la consulta de actualización
+            const queryActualizar = `UPDATE ${tabla} SET ? WHERE nombre = ?`;
+            conexion.query(queryActualizar, [datosFinales, user.name], (err, resultado) => {
                 if (err) {
                     return reject(err);
                 }
@@ -163,6 +180,7 @@ function update(tabla, user, data) {
         });
     });
 }
+
 
 
 function eliminar(tabla, data) {
@@ -174,15 +192,37 @@ function eliminar(tabla, data) {
 }
 
 /**Para asegurarme de que las actualizaciones sean correctas, ya que le paso un array que puede venir con menos elementos
- * de los que contiene la tabla.
+* de los que contiene la tabla.
 */ 
 function sanitizeRequestBody(reqBody) {
-    const expectedKeys=['nombre', 'password', 'game_tag', 'main_rol', 'alt_rol']
+    const expectedKeys = ['nombre', 'password', 'game_tag', 'main_rol', 'alt_rol'];
+
     return expectedKeys.reduce((acc, key) => {
-        acc[key] = reqBody[key] || undefined;
+        if (reqBody[key]) {
+            acc[key] = reqBody[key]; // Solo agregar campos con valores válidos
+        }
         return acc;
     }, {});
 }
+
+function buscarUsuarioPorNombre(nombre) {
+    return new Promise((resolve, reject) => {
+        const query = `SELECT * FROM usuarios WHERE nombre = ?`;
+        conexion.query(query, [nombre], (err, resultado) => {
+            if (err) {
+                return reject(err);
+            }
+            if (resultado.length === 0) {
+                return resolve(undefined); // Devolver undefined si no se encuentra ningún usuario
+            }
+            // Comparación case-sensitive en JS (aunque no es lo ideal)
+            const usuarioEncontrado = resultado.filter(u => u.nombre === nombre);
+            //console.log(usuarioEncontrado);
+            resolve(usuarioEncontrado); // Devolver el usuario encontrado
+        });
+    });
+}
+
 
 module.exports = {
     todos,
@@ -190,5 +230,6 @@ module.exports = {
     agregar,
     eliminar,
     initialize,
-    update
+    update,
+    buscarUsuarioPorNombre,
 };
