@@ -19,7 +19,7 @@ function conexionMysql() {
         if (err) {
             setTimeout(conexionMysql, 200);
         } else {
-            console.log('Conexion a la base de datos establecida');
+            console.log('Conexion a la base de datos establecida, hola mundo.');
         }
     });
 
