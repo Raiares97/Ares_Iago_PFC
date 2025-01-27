@@ -1,0 +1,104 @@
+Visualización de tutoriales de empleo y trabajo de Figma, hasta el numero 7 de los 13 recomendados.
+Aprendizaje sobre teoría de colores.
+Posterior reunión con Breo, presentación de mi experiencia, tecnologías que emplea la empresa y propuesta de un reto de iniciación al diseño web, de modificar una pagina web.
+Volver atrás y hacer todo lo que había hecho hasta ahora siguiendo los tutoriales, de cara a este reto, ya identificados los colores primarios, secundarios y de énfasis (pendientes los de confirmación, advertencia y peligro).
+Buscar referencias en la web para el diseño de mi pagina.
+
+-
+Terminar la tabla de colores, seleccionar tipografia para la pagina web, y hacer una tabla con todos los estilos que puedo necesitar en el diseño, creación de grids para distintos tamaños de pantalla, selección de iconografía para la pagina web, creación de botones para el menú de navegación, y creación de ese menú en una plantilla.
+Faltan los botones de algunas acciones como por ejemplo -> Programa KIT Digital
+16:25
+Y los botones de aceptar, confirmar y cancelar
+
+-
+Emplear plantillas para la creación del landing page y hero section durante la tarde, por la mañana terminar de hacer botones a mano y asignar distintos tamaños para distintas fuentes,  así como todos los colores de los iconos, mensajes de error y cuadro de búsqueda personalizado.
+
+-
+Empleo de librerias para continuar el diseño,  creación del nav menu, el formulario de contacto, distintos diseños diferentes probados hasta llegar al que estoy empleando actualmente.
+
+-
+Animación de diversos elementos del diseño, aprendizaje a vectorizar los movimientos de las animaciones, y adaptación de una nueva plantilla
+
+-
+Vale estuve probando el plugin de subastas y el free tiene muchos problemas, por ejemplo tiene una autosubasta que solo se puede desactivar para el pro, y por ejemplo si pones incrementos minimos de 10€ y empieda en 100€, el segundo si pone 200€ se le baja a 120€. A parte de eso cambie el diseño por completo de la pagina de jepeal, ahora que entendí mejor figma despues de ver a mis compañeros.
+
+-
+El viernes complete la prueba del plugin de wordpress para hacer subastas, y segui refinando el diseño de la web, aprendí a animar y hacer transiciones con aceleración y rebasamientos de bordes, dando a las animaciones más sabor.
+
+-
+Ajuste el diseño de la sección Kit digital, hice una ventana principal para sus ofertas, y estuve probando con wordpress el WooAuctions, de momento ningún problema
+
+-
+Prueba de distintos estilos para la pagina de Tinikas, de momento no he encontrado una paleta de colores que me agrade, pero ya tengo la hero secction ideada más o menos. Además de distintos elementos desplegables para las animaciones que le gustan de la página de referencia
+
+-
+Volvi a empezar el diseño de Tinikas, aprendiendo un poco de parallax e intentando ceñirme a la idea de diseño que se acordó, pero los colores azules no le sientan nada bien, ni el blanco + dorado. He pasado a una paleta de colores que está pendiente de aprobación.
+
+-
+Desarrollo de un diseño todo el día, aprendido a integrar distintos elementos a diferentes niveles para hacer más bonita una sección
+
+-
+Ya está todo hecho lo que habiamos hablado, revisado el diseño del slider para los servicios de la pagina en la que estoy trabajando. 
+
+-
+He terminado ya el index, el footer, la pestaña de empresa, y estoy animando la de servicios, me quedan 3/5. El formulario de contacto solo le voy a animar el boton de enviar. Mañana por la mañana está ya terminado el mock-up.
+
+-
+Hoy segui dandole retoques finales al diseño y por la tarde empecé con tutoriales de elementor, y a recrear el diseño en wordpress.
+
+-
+Diseñado en elementor, y primera toma de contacto de wp-bakery, lectura de manuales para su uso.
+
+-
+Lectura y ensayos con plantillas de Gem en Bakery. Diseñado inicial de un elemento en Slider Revolution y puesta en común de la v2 de tinikas.
+
+-
+He montado el header, solo me falta espaciarlo un pocpo para que quede mejor, y he animado el slider de la hero section, me falta implementar los videos y fotos, pero ya vi como hacerlo y con animaciones de carga y todo. Tengo un comportamiento raro de la plantilla que estoy usando, que me hace scroll a la sección de debajo del hero y no sé donde deshabilitarlo.
+
+-
+ Maquetación de múltiples sliders con elementos animados. Maquetado de footer. Animado y añadido diferentes navegaciones al slider, añadido plugin de whatsapp.
+
+-
+Generar de 0 los bullets del slider como habiamos hablado, generar el nuevo diseño del logo, cambiado el footer para que sea más pequeño. Generacion de un libro SCORM a partir de un pdf.
+
+-
+Me he visto el primer tutorial de los dos de como hacer seo, y después tuve un problema con el ordenador, se me murió una pantalla por lo que descubri con el cambio de resolución a la otra, que mi slider revolution no es responsive. Tengo que cambiar eso. El footer está retocado y estoy con las paginas de servicio ya haciendo maquetaciones para terminarlas lo más rápido posible.
+
+-
+He descubierto y arreglado el porqué no se me ponía a altura completa la seccion el las paginas de servicios, creado un template para ellas que permite el full widht y height, tan solo tendría que borrar elementos para cada servicio. El main menu está implementado, solo me queda centrarlo un poco. El slider revolution implementé los cambios que habíamos comentado, tengo por empezar la galería de fotos y un header pequeño para cada servicio.
+
+-
+La plantilla que había creado no me dejaba añadir mas elementos a las secciones, así que  he tenido que empezar con otra, despues el revolution slider no aparecia pese a haber creado la plantilla, sospecho que es un bug, pues usando la plantilla y añadiendo un modulo en blanco me aparecen los dos revolution sliders que tengo puestos. He creado ya la pagina para servicios, solo requiere alguna que otra modificación para usarla. Además ya cree la galería como habiamos planteado en la reunión pero me gustaría revisar la idea porque quedan demasiado estrechas y creo que habría que hacerlo de otra manera. El menú está hecho ya, pero tengo problemas para posicionarlo en el centro.
+
+-
+He seguido con las páginas de servicio, avanzo lento porque por usar diferentes diseños para las fotos que acompañan al texto, se me rompe la plantilla a cada pagina que hago y tengo que volver a rehacerla. La animación de iluminar la bombilla está hecha, solo tengo que atar los eventos en cadena a cada click. Mañana debería tener ya todas las paginas de servicio hechas, la de empresa y quizás la de contacto. Pero me gustaría repasar la idea de la galería de fotos en las actividades, por ver que te parece.
+
+-
+terminé las paginas de servicios, les falta algun que otro retoque, pero están terminadas. La galería está recortada y se ven mejor las imagenes ahora. Estuve provando la idea del svg del rayo pero distorsiona mucho, mañana pruebo a hacer uno animado y sino animo manualmente como te había dicho.
+
+-
+Intenté emplear el svg animado como habías indicado, pero no consigo diseñarlo bien, mañana lo sigo intentando. Hice todos los sliders de la pagina de empresa, solo me queda copiar y pegar el diseño tantas veces como queramos emplearlo y aprendi a hacer carrouseles con el efecto infinity que me habías comentado.
+
+-
+Termine la pagina de empresa, prototipé con el importado de SVG a traves de un link JSON, arreglé el slider de empresa, aunque me parece que queda muy solitaria la pagina con solo eso. Empecé con Contactos y he descubierto que algunos plugins de wordpress emplean bootstrap, estoy intentando diseñar un formulario especifico para la pagina en el Contact Form 7.
+
+-
+He terminado todas las paginas de servicio, y la de contacto. He estado tocando los temas nativos de the gem a traves de css e intentado implementar un svg animado con etiqueta html, pero distorsiona mucho al diseño al rotarlo.
+
+-
+Menú funcional y centrado, todas las paginas con la nueva galería que he sacado, me parece mejor que la que tenia antes, retoque de los textos y espaciados para que esté todo coherente. Retoque de colores de los elementos del tema para que cuadren con los colores de las plantillas.
+
+-
+Hoy he estado retocando y asignando paddings nuevos a algunos componentes, he estado probando una ia para vectorizar imagenes a svg y después me he puesto a intentar modificar el php de la plantilla para el comportamiento de vuelta al home del icono, no hay manera alguna de hacer que el icono de tinikas te redireccione sino. Hasta ahora he conseguido que m genere el comportamiento que quiero pero me genera tres iconos y no sé porque, tengo que seguir viendo. Solo me queda eso por hacer de lo que habíamos hablado.
+
+-
+Estuve tocando el php intentando generar un enlace con imagen a traves del tema de the gem, pero imposible. Empecé con el diseño de la siguiente pagina mientras esperaba revisión de la otra, y ademas estuve retocando animaciones y layouts.
+
+-
+He estado todo el dia con el diseño de eva comesaña, ya está hecha la mayoria de la pagina web, con las secciones de biografía espectáculos y gestion cultural terminadas suponiendo en total 11 paginas diferentes. En relación a lo que hablamos del submenú que no queríamos hacer peticiones todo el rato al servidor en cada click, existe un plugin en wordpress llamado quadmenu que permite el cargar contenido al cargar la sección y mostrarlo al clickar en la categoría correspondiente del submenu.
+
+-
+Termine del diseño las páginas que me faltaban,  arregle el menu de tinikas, rehice el revolution slider como habiamos comentado, estuve probando el responsive del menu y como se ve en tablet y mobil, e intenté hacer algun que otro diseño para la seccion de empresa, pero aun no me convence.
+
+-
+Rehice el menu superior, la pagina principal para adoptar el nuevo slider tuve que rehacerla también, estuve probando distintos diseños para la página de empresa (ahora creo que está bien, es simple pero bonita), y después me di cuenta de que algunos headers de las paginas de servicios a veces se cargaban desplazados a la izquierda, me he puesto a controlar porqué y creo que están todos ya en su sitio.

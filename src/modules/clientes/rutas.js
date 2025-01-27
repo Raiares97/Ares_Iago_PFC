@@ -81,7 +81,7 @@ async function todos(req, res, next) {
         }else{
             items = await controlador.todos();
         }
-        console.log(items);
+        console.log(items);  
         
         respuesta.success(req, res, items, 200);
     } catch (err) {

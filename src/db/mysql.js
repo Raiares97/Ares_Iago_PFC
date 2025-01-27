@@ -181,8 +181,6 @@ function update(tabla, user, data) {
     });
 }
 
-
-
 function eliminar(tabla, data) {
     return new Promise((resolve, reject) => {
         conexion.query(`DELETE FROM ${tabla} WHERE nombre = '${data.nombre}' AND game_tag = '${data.game_tag}'`, (err, resultado) => {
@@ -222,8 +220,7 @@ function buscarUsuarioPorNombre(nombre) {
         });
     });
 }
-
-
+ 
 module.exports = {
     todos,
     uno,
